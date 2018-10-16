@@ -1,0 +1,196 @@
+﻿<UserControl x:Class="RelaCS_App.Instruments"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RelaCS_App"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800" Width="700" Height="412.5">
+    <!--whole grid-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!--title row-->
+            <RowDefinition Height="*"/>
+            <!--content row-->
+            <RowDefinition Height="5*"/>
+            <!--second row-->
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--title-->
+        <TextBlock Text="Instruments" Foreground="#e9e9e9" FontSize="25" Margin="15 0 0 0" VerticalAlignment="Center"/>
+        <!--guitar part-->
+        <Grid Grid.Row="1" Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="guitarSoundSlider" Value="0.5" ValueChanged="guitarSoundSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="guitarInstrumentIcon" MouseDown="guitarInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="GuitarAcoustic" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Guitar 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Guitar 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Guitar 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Guitar 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <!--piano part-->
+        <Grid Grid.Row="1" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="pianoSoundSlider" ValueChanged="pianoSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="pianoInstrumentIcon" MouseDown="pianoInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Piano" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Piano 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Piano 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Piano 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Piano 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <!--violin part-->
+        <Grid Grid.Row="1" Grid.Column="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="violinSoundSlider" ValueChanged="violinSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="violinInstrumentIcon" MouseDown="violinInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Violin" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Violin 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Violin 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Violin 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Violin 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <!--Cello part-->
+        <Grid Grid.Row="2" Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="celloSoundSlider" ValueChanged="celloSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="celloInstrumentIcon" MouseDown="celloInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Violin" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Cello 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Cello 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Cello 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Cello 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <!--flute part-->
+        <Grid Grid.Row="2" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="fluteSoundSlider" ValueChanged="fluteSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="fluteInstrumentIcon" MouseDown="fluteInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Violin" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Flute 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Flute 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Flute 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Flute 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <!--harp part-->
+        <Grid Grid.Row="2" Grid.Column="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="harpSoundSlider" ValueChanged="harpSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="harpInstrumentIcon" MouseDown="harpInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Violin" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Harp 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Harp 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Harp 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Harp 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</UserControl>
