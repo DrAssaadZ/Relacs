@@ -118,5 +118,10 @@
     <Resource Include="Resources\bird.ico" />
     <Resource Include="Resources\waterfall.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cello.png" />
+    <Resource Include="Resources\flute.png" />
+    <Resource Include="Resources\harp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
