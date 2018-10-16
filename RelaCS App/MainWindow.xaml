@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RelaCS_App"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="450" Width="800" MaxHeight="600" MaxWidth="1000" MinHeight="450" MinWidth="800" BorderBrush="#FF1E9EC5" AllowsTransparency="True" Background="#727A7A7A" WindowStyle="None" Loaded="Window_Loaded">
+        Title="MainWindow" Height="520" Width="800" MaxHeight="600" MaxWidth="1000" MinHeight="520" MinWidth="800" BorderBrush="#FF1E9EC5" AllowsTransparency="True" Background="#727A7A7A" WindowStyle="None" Loaded="Window_Loaded">
     <!--removing the resize border-->
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
