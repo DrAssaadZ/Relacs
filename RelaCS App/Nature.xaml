@@ -1,0 +1,273 @@
+﻿<UserControl x:Class="RelaCS_App.Nature"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RelaCS_App"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800" Width="700" Height="600"
+             Margin="0 40 0 0">
+    <!--whole grid-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!--title row-->
+            <RowDefinition Height="*"/>
+            <!--content rows-->
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--title-->
+        <TextBlock Text="Nature" Foreground="#e9e9e9" FontSize="25" Margin="15 0 0 0" VerticalAlignment="Center"/>
+        <!--left part-->
+        <Grid Grid.Row="1" Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="rainSlider" Value="0.5" ValueChanged="rainSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="rainIcon" MouseDown="rainIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="WeatherRainy" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White" Background="Transparent" >
+                <ComboBoxItem IsSelected="True">
+                    Rain 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Rain 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Rain 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Rain 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="thunderSlider" ValueChanged="thunderSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="thunderIcon" MouseDown="thunderIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="WeatherLightning" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Thunder 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Thunder 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Thunder 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Thunder 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="birdSlider" ValueChanged="birdSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <Image x:Name="birdIcon" MouseDown="birdIcon_MouseDown" Grid.Column="0" Grid.Row="0" Source="Resources/bird.ico" Height="100" Width="100" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Birds 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Birds 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Birds 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Birds 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="waveSlider" Value="0.5" ValueChanged="waveSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="waveIcon" MouseDown="waveIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Waves" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Waves 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Waves 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Waves 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Waves 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="windSlider" Value="0.5" ValueChanged="windSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="windIcon" MouseDown="windIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="WeatherWindy" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Wind 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Wind 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Wind 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Wind 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="trainSlider" Value="0.5" ValueChanged="trainSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="trainIcon" MouseDown="trainIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Tram" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Train 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Train 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Train 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Train 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="nightSlider" Value="0.5" ValueChanged="nightSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="nightIcon" MouseDown="nightIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="WeatherNight" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Night 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Night 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Night 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Night 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="fireSlider" Value="0.5" ValueChanged="fireSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon x:Name="fireIcon" MouseDown="fireIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Fire" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Fire 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Fire 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Fire 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Fire 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="3" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--sound slider-->
+            <Slider x:Name="fallSlider" Value="0.5" ValueChanged="fallSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
+            <Image x:Name="fallIcon" MouseDown="fallIcon_MouseDown" Grid.Column="0" Grid.Row="0" Source="Resources/waterfall.png"  Height="100" Width="100" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+                <ComboBoxItem IsSelected="True">
+                    Waterfall 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Waterfall 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Waterfall 3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Waterfall 4
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</UserControl>
