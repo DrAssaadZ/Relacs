@@ -29,6 +29,8 @@ namespace RelaCS_App
         MediaPlayer night = new MediaPlayer();
         MediaPlayer fire = new MediaPlayer();
         MediaPlayer fall = new MediaPlayer();
+        string rainAudio = "Rain 1";
+        
 
         public Nature()
         {
@@ -48,9 +50,11 @@ namespace RelaCS_App
                 rainIcon.Opacity = 1;
                 rainSlider.IsEnabled = true;
 
-                rain.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                //rain.Open(new Uri("Resources/" + rainAudio + ".mp3", UriKind.Relative));
+                rain.Open(new Uri(@"C:\Users\Assaad\Desktop\" + rainAudio + ".mp3"));
                 rain.MediaEnded += new EventHandler(rain_ended);
                 rain.Volume = 0.5;
+                rainSlider.Value = 0.5;
                 rain.Play();
             }
             else
@@ -63,8 +67,25 @@ namespace RelaCS_App
 
         private void rain_ended(object sender, EventArgs e)
         {
-            rain.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            //rain.Open(new Uri("Resources/" + rainAudio + ".mp3", UriKind.Relative));
+            rain.Open(new Uri(@"C:\Users\Assaad\Desktop\" + rainAudio + ".mp3"));
             rain.Play();
+        }
+
+        private void rainCombo_DropDownClosed(object sender, EventArgs e)
+        {
+            if (rainIcon.Opacity == 0.4)
+            {
+                rainAudio = rainCombo.Text;
+            }
+            else
+            {
+                rain.Stop();
+                rainAudio = rainCombo.Text;
+                //rain.Open(new Uri("Resources/"+rainAudio+".mp3", UriKind.Relative));
+                rain.Open(new Uri(@"C:\Users\Assaad\Desktop\" + rainAudio + ".mp3"));
+                rain.Play();
+            }
         }
         #endregion
 
@@ -330,6 +351,8 @@ namespace RelaCS_App
             fall.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
             fall.Play();
         }
+
         #endregion
+   
     }
 }

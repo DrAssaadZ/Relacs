@@ -38,9 +38,9 @@
             <!--sound slider-->
             <Slider x:Name="rainSlider" Value="0.5" ValueChanged="rainSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <materialDesign:PackIcon x:Name="rainIcon" MouseDown="rainIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="WeatherRainy" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White" Background="Transparent" >
+            <ComboBox x:Name="rainCombo" DropDownClosed="rainCombo_DropDownClosed" Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White" Background="Transparent" >
                 <ComboBoxItem IsSelected="True">
-                    Rain 1
+                     Rain 1
                 </ComboBoxItem>
                 <ComboBoxItem>
                     Rain 2
@@ -173,7 +173,7 @@
             <!--sound slider-->
             <Slider x:Name="trainSlider" Value="0.5" ValueChanged="trainSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <materialDesign:PackIcon x:Name="trainIcon" MouseDown="trainIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Tram" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White" Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Train 1
                 </ComboBoxItem>
