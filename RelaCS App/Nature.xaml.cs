@@ -51,7 +51,7 @@ namespace RelaCS_App
                 rainSlider.IsEnabled = true;
 
                 //rain.Open(new Uri("Resources/" + rainAudio + ".mp3", UriKind.Relative));
-                rain.Open(new Uri(@"C:\Users\Assaad\Desktop\" + rainAudio + ".mp3"));
+                rain.Open(new Uri("Resources/"+rainAudio+".mp3", UriKind.Relative));
                 rain.MediaEnded += new EventHandler(rain_ended);
                 rain.Volume = 0.5;
                 rainSlider.Value = 0.5;
@@ -68,7 +68,7 @@ namespace RelaCS_App
         private void rain_ended(object sender, EventArgs e)
         {
             //rain.Open(new Uri("Resources/" + rainAudio + ".mp3", UriKind.Relative));
-            rain.Open(new Uri(@"C:\Users\Assaad\Desktop\" + rainAudio + ".mp3"));
+            rain.Open(new Uri("Resources/" + rainAudio + ".mp3", UriKind.Relative));
             rain.Play();
         }
 
@@ -81,9 +81,8 @@ namespace RelaCS_App
             else
             {
                 rain.Stop();
-                rainAudio = rainCombo.Text;
-                //rain.Open(new Uri("Resources/"+rainAudio+".mp3", UriKind.Relative));
-                rain.Open(new Uri(@"C:\Users\Assaad\Desktop\" + rainAudio + ".mp3"));
+                rainAudio = rainCombo.Text;                
+                rain.Open(new Uri("Resources/" + rainAudio + ".mp3", UriKind.Relative));
                 rain.Play();
             }
         }
