@@ -27,6 +27,13 @@ namespace RelaCS_App
         MediaPlayer cello = new MediaPlayer();
         MediaPlayer harp = new MediaPlayer();
         MediaPlayer flute = new MediaPlayer();
+        //audio vars
+        string guitarAudio = "Guitar 1";
+        string pianoAudio = "Piano 1";
+        string violinAudio = "Violin 1";
+        string celloAudio = "Cello 1";
+        string fluteAudio = "Flute 1";
+        string harpAudio = "Harp 1";
 
         public Instruments()
         {
@@ -42,7 +49,7 @@ namespace RelaCS_App
                 guitarInstrumentIcon.Opacity = 1;
                 guitarSoundSlider.IsEnabled = true;
 
-                guitar.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                guitar.Open(new Uri("Resources/" + guitarAudio + ".mp3", UriKind.Relative));
                 guitar.MediaEnded += new EventHandler(guitar_ended);
                 guitar.Volume = 0.5;
                 guitar.Play();
@@ -64,12 +71,28 @@ namespace RelaCS_App
         //looping the guitar sound 
         private void guitar_ended(object sender, EventArgs e)
         {
-            guitar.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            guitar.Open(new Uri("Resources/" + guitarAudio + ".mp3", UriKind.Relative));
             guitar.Play();
+        }
+
+        //changing the sound on drop down menu item changed
+        private void guitarCombo_DropDownClosed(object sender, EventArgs e)
+        {
+            if (guitarInstrumentIcon.Opacity == 0.4)
+            {
+                guitarAudio = guitarCombo.Text;
+            }
+            else
+            {
+                guitar.Stop();
+                guitarAudio = guitarCombo.Text;
+                guitar.Open(new Uri("Resources/" + guitarAudio + ".mp3", UriKind.Relative));
+                guitar.Play();
+            }
         }
         #endregion
 
-        #region guitar
+        #region piano
         //piano icon click event
         private void pianoInstrumentIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -78,7 +101,7 @@ namespace RelaCS_App
                 pianoInstrumentIcon.Opacity = 1;
                 pianoSoundSlider.IsEnabled = true;
 
-                piano.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                piano.Open(new Uri("Resources/" + pianoAudio + ".mp3", UriKind.Relative));
                 piano.MediaEnded += new EventHandler(piano_ended);
                 guitar.Volume = 0.5;
                 piano.Play();
@@ -100,8 +123,24 @@ namespace RelaCS_App
         //looping piano sound
         private void piano_ended(object sender, EventArgs e)
         {
-            piano.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            piano.Open(new Uri("Resources/" + pianoAudio + ".mp3", UriKind.Relative));
             piano.Play();
+        }
+
+        //changing the sound on drop down menu item changed
+        private void pianoCombo_DropDownClosed(object sender, EventArgs e)
+        {
+            if (pianoInstrumentIcon.Opacity == 0.4)
+            {
+                pianoAudio = guitarCombo.Text;
+            }
+            else
+            {
+                piano.Stop();
+                pianoAudio= guitarCombo.Text;
+                piano.Open(new Uri("Resources/" + pianoAudio + ".mp3", UriKind.Relative));
+                piano.Play();
+            }
         }
         #endregion
 
@@ -114,7 +153,7 @@ namespace RelaCS_App
                 violinInstrumentIcon.Opacity = 1;
                 violinSoundSlider.IsEnabled = true;
 
-                violin.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                violin.Open(new Uri("Resources/" + violinAudio + ".mp3", UriKind.Relative));
                 violin.MediaEnded += new EventHandler(violin_ended);
                 violin.Volume = 0.5;
                 violin.Play();
@@ -131,7 +170,7 @@ namespace RelaCS_App
         //looping the violin sound
         private void violin_ended(object sender, EventArgs e)
         {
-            violin.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            violin.Open(new Uri("Resources/" + violinAudio + ".mp3", UriKind.Relative));
             violin.Play();
 
         }
@@ -140,6 +179,22 @@ namespace RelaCS_App
         private void violinSoundSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             violin.Volume = violinSoundSlider.Value;
+        }
+
+        //changing the sound on drop down menu item changed
+        private void violinComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (violinInstrumentIcon.Opacity == 0.4)
+            {
+                violinAudio = violinComboBox.Text;
+            }
+            else
+            {
+                violin.Stop();
+                violinAudio = violinComboBox.Text;
+                violin.Open(new Uri("Resources/" + violinAudio + ".mp3", UriKind.Relative));
+                violin.Play();
+            }
         }
         #endregion
 
@@ -152,7 +207,7 @@ namespace RelaCS_App
                 celloInstrumentIcon.Opacity = 1;
                 celloSoundSlider.IsEnabled = true;
 
-                cello.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                cello.Open(new Uri("Resources/" + celloAudio + ".mp3", UriKind.Relative));
                 cello.MediaEnded += new EventHandler(cello_ended);
                 cello.Volume = 0.5;
                 cello.Play();
@@ -168,7 +223,7 @@ namespace RelaCS_App
         //looping the cello sound
         private void cello_ended(object sender, EventArgs e)
         {
-            cello.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            cello.Open(new Uri("Resources/" + celloAudio + ".mp3", UriKind.Relative));
             cello.Play();
         }
 
@@ -176,6 +231,22 @@ namespace RelaCS_App
         private void celloSoundSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             cello.Volume = celloSoundSlider.Value;
+        }
+
+        //changing the sound on drop down menu item changed
+        private void celloComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (celloInstrumentIcon.Opacity == 0.4)
+            {
+                celloAudio = celloComboBox.Text;
+            }
+            else
+            {
+                cello.Stop();
+                celloAudio = celloComboBox.Text;
+                cello.Open(new Uri("Resources/" + celloAudio + ".mp3", UriKind.Relative));
+                cello.Play();
+            }
         }
         #endregion
 
@@ -188,7 +259,7 @@ namespace RelaCS_App
                 fluteInstrumentIcon.Opacity = 1;
                 fluteSoundSlider.IsEnabled = true;
 
-                flute.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                flute.Open(new Uri("Resources/" + fluteAudio + ".mp3", UriKind.Relative));
                 flute.MediaEnded += new EventHandler(flute_ended);
                 flute.Volume = 0.5;
                 flute.Play();
@@ -204,7 +275,7 @@ namespace RelaCS_App
         //looping flute sound
         private void flute_ended(object sender, EventArgs e)
         {
-            flute.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            flute.Open(new Uri("Resources/" + fluteAudio + ".mp3", UriKind.Relative));
             flute.Play();
         }
 
@@ -213,6 +284,22 @@ namespace RelaCS_App
         {
             flute.Volume = fluteSoundSlider.Value;
         }
+
+        private void fluteCombobox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (fluteInstrumentIcon.Opacity == 0.4)
+            {
+                fluteAudio = fluteCombobox.Text;
+            }
+            else
+            {
+                flute.Stop();
+                fluteAudio = fluteCombobox.Text;
+                flute.Open(new Uri("Resources/" + fluteAudio + ".mp3", UriKind.Relative));
+                flute.Play();
+            }
+        }
+
         #endregion
 
         #region harp
@@ -224,7 +311,7 @@ namespace RelaCS_App
                 harpInstrumentIcon.Opacity = 1;
                 harpSoundSlider.IsEnabled = true;
 
-                harp.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+                harp.Open(new Uri("Resources/" + harpAudio + ".mp3", UriKind.Relative));
                 harp.MediaEnded += new EventHandler(harp_ended);
                 harp.Volume = 0.5;
                 harp.Play();
@@ -240,7 +327,7 @@ namespace RelaCS_App
         //looping harp sound
         private void harp_ended(object sender, EventArgs e)
         {
-            harp.Open(new Uri("Resources/Thunder.mp3", UriKind.Relative));
+            harp.Open(new Uri("Resources/" + harpAudio + ".mp3", UriKind.Relative));
             harp.Play();
         }
 
@@ -249,6 +336,25 @@ namespace RelaCS_App
         {
             harp.Volume = harpSoundSlider.Value;
         }
+
+        private void harpComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (harpInstrumentIcon.Opacity == 0.4)
+            {
+                harpAudio = harpComboBox.Text;
+            }
+            else
+            {
+                harp.Stop();
+                harpAudio = harpComboBox.Text;
+                harp.Open(new Uri("Resources/" + harpAudio + ".mp3", UriKind.Relative));
+                harp.Play();
+            }
+
+        }
+
         #endregion
+
+
     }
 }

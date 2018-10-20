@@ -37,7 +37,7 @@
             <!--sound slider-->
             <Slider x:Name="guitarSoundSlider" Value="0.5" ValueChanged="guitarSoundSlider_ValueChanged" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <materialDesign:PackIcon x:Name="guitarInstrumentIcon" MouseDown="guitarInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="GuitarAcoustic" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox x:Name="guitarCombo" Grid.Column="0" Grid.Row="1" DropDownClosed="guitarCombo_DropDownClosed" Margin="4" Foreground="White"  Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Guitar 1
                 </ComboBoxItem>
@@ -65,7 +65,7 @@
             <!--sound slider-->
             <Slider x:Name="pianoSoundSlider" ValueChanged="pianoSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <materialDesign:PackIcon x:Name="pianoInstrumentIcon" MouseDown="pianoInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Piano" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox x:Name="pianoCombo" DropDownClosed="pianoCombo_DropDownClosed" Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Piano 1
                 </ComboBoxItem>
@@ -77,6 +77,24 @@
                 </ComboBoxItem>
                 <ComboBoxItem>
                     Piano 4
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Beethoven moonlight sonata
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Beethoven Sonata No.14 3rd Mov 
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Mozart concerto no. 20
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Bach prelude and fugue BWV 783
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Chopin Op.25, No.11
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Chopin Op.25, No.5
                 </ComboBoxItem>
             </ComboBox>
         </Grid>
@@ -93,7 +111,7 @@
             <!--sound slider-->
             <Slider x:Name="violinSoundSlider" ValueChanged="violinSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <materialDesign:PackIcon x:Name="violinInstrumentIcon" MouseDown="violinInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Kind="Violin" Height="100" Width="100"  Foreground="White" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox x:Name="violinComboBox" DropDownClosed="violinComboBox_DropDownClosed" Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Violin 1
                 </ComboBoxItem>
@@ -105,6 +123,21 @@
                 </ComboBoxItem>
                 <ComboBoxItem>
                     Violin 4
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Beethoven Violin Sonata No.9 1st Mov
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Bach violin Partita No. 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Kreisler Liebesleid
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Mozart violin concerto No.3
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Mozart violin concerto No.4
                 </ComboBoxItem>
             </ComboBox>
         </Grid>
@@ -121,7 +154,7 @@
             <!--sound slider-->
             <Slider x:Name="celloSoundSlider" ValueChanged="celloSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <Image x:Name="celloInstrumentIcon" MouseDown="celloInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Source="Resources/cello.png" Height="100" Width="100" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox x:Name="celloComboBox" DropDownClosed="celloComboBox_DropDownClosed" Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Cello 1
                 </ComboBoxItem>
@@ -149,7 +182,7 @@
             <!--sound slider-->
             <Slider x:Name="fluteSoundSlider" ValueChanged="fluteSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <Image x:Name="fluteInstrumentIcon" MouseDown="fluteInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Source="Resources/flute.png" Height="100" Width="100"   Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox x:Name="fluteCombobox" DropDownClosed="fluteCombobox_DropDownClosed"  Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Flute 1
                 </ComboBoxItem>
@@ -177,7 +210,7 @@
             <!--sound slider-->
             <Slider x:Name="harpSoundSlider" ValueChanged="harpSoundSlider_ValueChanged" Value="0.5" IsEnabled="False" Minimum="0" Maximum="1" Foreground="White" Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2" Margin="0 20 0 20" HorizontalAlignment="Center"/>
             <Image x:Name="harpInstrumentIcon" MouseDown="harpInstrumentIcon_MouseDown" Grid.Column="0" Grid.Row="0" Height="100" Width="100" Source="Resources/harp.png" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
+            <ComboBox x:Name="harpComboBox" DropDownClosed="harpComboBox_DropDownClosed" Grid.Column="0" Grid.Row="1"  Margin="4" Foreground="White"  Background="Transparent">
                 <ComboBoxItem IsSelected="True">
                     Harp 1
                 </ComboBoxItem>
