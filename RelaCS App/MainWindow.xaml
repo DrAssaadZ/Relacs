@@ -38,6 +38,7 @@
             <StackPanel Orientation="Vertical">
                 <local:Instruments/>
                 <local:Nature/>
+                <local:Experimental/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

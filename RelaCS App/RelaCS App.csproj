@@ -60,6 +60,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Experimental.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Instruments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +75,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Experimental.xaml.cs">
+      <DependentUpon>Experimental.xaml</DependentUpon>
     </Compile>
     <Compile Include="Instruments.xaml.cs">
       <DependentUpon>Instruments.xaml</DependentUpon>
@@ -122,6 +129,18 @@
     <Resource Include="Resources\cello.png" />
     <Resource Include="Resources\flute.png" />
     <Resource Include="Resources\harp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ambient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\drone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lounge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\beta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
